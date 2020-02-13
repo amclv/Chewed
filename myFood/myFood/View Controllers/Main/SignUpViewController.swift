@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, UITextFieldDelegate {
+class SignUpViewController: ShiftableViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -20,6 +20,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.delegate = self
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
+        locationTextField.delegate = self
     }
     
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
@@ -47,5 +52,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         } else {
             Alert.showBasic(title: "Oops!", message: "You didn't fill out a required field", vc: self)
         }
+    }
+}
+
+extension SignUpViewController {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return true
     }
 }

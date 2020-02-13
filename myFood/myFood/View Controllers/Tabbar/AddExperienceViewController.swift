@@ -21,6 +21,11 @@ class AddExperienceViewController: ShiftableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dishName.delegate = self
+        dishPrice.delegate = self
+        dishRating.delegate = self
+        dishReview.delegate = self
+        date.delegate = self
         updateViews()
     }
     
@@ -68,18 +73,37 @@ class AddExperienceViewController: ShiftableViewController {
                                     updatedAt: review.updatedAt,
                                     dateVisited: dishDate)
         } else {
-        reviewController.createReviews(id: 0,
-                                       menuItem: dishName,
-                                       itemPrice: Double(dishPrice) ?? 0,
-                                       itemRating: Int(dishRating) ?? 0,
-                                       itemReview: dishReview,
-                                       restaurantID: Int(review?.restaurantID ?? 0),
-                                       reviewedBy: review?.reviewedBy ?? "",
-                                       itemImageURL: review?.itemImageURL ?? "",
-                                       createdAt: review?.createdAt,
-                                       updatedAt: review?.updatedAt,
-                                       dateVisited: dishDate)
-        print("ADDING REVIEW TO TABLEVIEW")
+            reviewController.createReviews(id: 0,
+                                           menuItem: dishName,
+                                           itemPrice: Double(dishPrice) ?? 0,
+                                           itemRating: Int(dishRating) ?? 0,
+                                           itemReview: dishReview,
+                                           restaurantID: Int(review?.restaurantID ?? 0),
+                                           reviewedBy: review?.reviewedBy ?? "",
+                                           itemImageURL: review?.itemImageURL ?? "",
+                                           createdAt: review?.createdAt,
+                                           updatedAt: review?.updatedAt,
+                                           dateVisited: dishDate)
+            print("ADDING REVIEW TO TABLEVIEW")
         }
+    }
+}
+
+extension AddExperienceViewController {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return true
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.endEditing(true)
+        }
+        return true
+    }
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        textView.endEditing(true)
+        return true
     }
 }

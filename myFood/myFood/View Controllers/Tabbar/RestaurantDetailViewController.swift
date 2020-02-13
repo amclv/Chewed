@@ -22,6 +22,12 @@ class RestaurantDetailViewController: ShiftableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        restaurantNameTextField.delegate = self
+        cuisineNameTextField.delegate = self
+        locationTextField.delegate = self
+        ratingTextField.delegate = self
+        reviewTextField.delegate = self
+        hoursTextView.delegate = self
         updateViews()
     }
     
@@ -74,4 +80,17 @@ class RestaurantDetailViewController: ShiftableViewController {
             print("this is adding a restaurant")
         }
     }
+}
+
+extension RestaurantDetailViewController {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return true
+    }
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        textView.endEditing(true)
+        return true
+    }
+    
 }

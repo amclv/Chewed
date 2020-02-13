@@ -14,7 +14,9 @@ class RestaurantController {
     typealias CompletionHanlder = (Error?) -> Void
     
     init() {
-        fetchRestaurantsFromServer()
+        fetchRestaurantsFromServer { (error) in
+            NSLog("Init \(error)")
+        }
     }
     
     let baseURL = URL(string: "https://foodiefunbw.herokuapp.com")!
@@ -55,6 +57,7 @@ class RestaurantController {
                 let decoder = JSONDecoder()
                 let restaurantRepresentation = try decoder.decode([RestaurantRepresentation].self, from: data)
                 self.updateRestaurant(with: restaurantRepresentation)
+                completion(nil)
             } catch {
                 NSLog("Error occured decoding restaurant objects: \(error)")
                 completion(error)

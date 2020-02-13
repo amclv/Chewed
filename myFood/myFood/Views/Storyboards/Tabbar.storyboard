@@ -13,21 +13,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="KnM-DO-xhH">
-            <objects>
-                <viewController id="fhj-2A-CP7" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Qgm-OO-4sB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="c2u-Ol-nX5"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0nl-UW-RH5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1445" y="1227"/>
-        </scene>
         <!--Home-->
         <scene sceneID="1Ur-GU-PxZ">
             <objects>
@@ -137,7 +122,7 @@
             </objects>
             <point key="canvasLocation" x="746" y="387"/>
         </scene>
-        <!--Add Dish-->
+        <!--Add Dish Review-->
         <scene sceneID="3vY-hf-SSx">
             <objects>
                 <viewController id="Qot-2f-lMB" customClass="AddExperienceViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
@@ -205,7 +190,7 @@
                         <viewLayoutGuide key="safeArea" id="3aU-Hy-2XH"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Dish" image="plus" catalog="system" id="A2U-09-3cU"/>
-                    <navigationItem key="navigationItem" id="7dR-f4-YgK"/>
+                    <navigationItem key="navigationItem" title="Add Dish Review" id="7dR-f4-YgK"/>
                     <connections>
                         <outlet property="date" destination="EbZ-XD-4xU" id="yLY-9g-BhM"/>
                         <outlet property="dishName" destination="gHg-OT-OtP" id="2rC-FY-24h"/>
@@ -216,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JqR-dS-vk3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3676.811594202899" y="1232.8125"/>
+            <point key="canvasLocation" x="2264" y="1233"/>
         </scene>
         <!--Reviews-->
         <scene sceneID="urP-bP-yMD">
@@ -333,7 +318,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HT8-Ep-JZW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2870" y="1233"/>
+            <point key="canvasLocation" x="1354" y="2040"/>
         </scene>
         <!--Restaurant Review-->
         <scene sceneID="fVg-A1-udg">
@@ -352,16 +337,16 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vny-1v-iUT">
-                                <rect key="frame" x="132" y="747" width="150" height="40"/>
+                                <rect key="frame" x="132" y="747" width="150" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Cocoa Brown"/>
+                                <color key="backgroundColor" name="Tomato"/>
                                 <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="24"/>
                                 <state key="normal" title="Save">
-                                    <color key="titleColor" name="Ronchi"/>
+                                    <color key="titleColor" name="Seashell"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
+                                        <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -389,13 +374,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Restaurant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9t1-0O-LNH">
-                                <rect key="frame" x="24" y="88" width="374" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArchivoNarrow-Regular" family="Archivo Narrow" pointSize="48"/>
-                                <color key="textColor" name="Cocoa Brown"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Hours of operation:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="t45-JT-SzU">
                                 <rect key="frame" x="20" y="269" width="374" height="228"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -412,11 +390,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" name="Cararra"/>
+                        <color key="backgroundColor" name="Seashell"/>
                         <viewLayoutGuide key="safeArea" id="hgP-Kn-0hE"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Dish" image="plus" catalog="system" id="uAo-tg-06P"/>
-                    <navigationItem key="navigationItem" id="V6d-wB-UAJ"/>
+                    <navigationItem key="navigationItem" title="Add Restaurant Review" id="V6d-wB-UAJ"/>
                     <connections>
                         <outlet property="cuisineNameTextField" destination="Htv-n0-thW" id="DEu-Uw-lZh"/>
                         <outlet property="hoursTextView" destination="t45-JT-SzU" id="7jl-Dh-JWu"/>
@@ -428,12 +406,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fep-VU-21W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="343.47826086956525" y="2025"/>
+            <point key="canvasLocation" x="-700" y="2040"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Restaurant Table View Controller-->
         <scene sceneID="0QM-Pg-317">
             <objects>
-                <tableViewController id="gsH-dS-cxe" sceneMemberID="viewController">
+                <tableViewController id="gsH-dS-cxe" customClass="RestaurantTableViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1J3-Ps-npe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -470,7 +448,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jg9-pu-Ths" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="1233"/>
+            <point key="canvasLocation" x="206" y="2041"/>
         </scene>
         <!--Dish Reviews-->
         <scene sceneID="ZkH-CD-L3y">
@@ -489,7 +467,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4WP-nD-pio" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2059" y="1233"/>
+            <point key="canvasLocation" x="1355" y="1233"/>
         </scene>
         <!--Restaurant Reviews-->
         <scene sceneID="BZO-aO-VU4">
@@ -520,24 +498,18 @@
         <namedColor name="Cararra">
             <color red="0.91399997472763062" green="0.90600001811981201" blue="0.875" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Cocoa Brown">
-            <color red="0.093999996781349182" green="0.071000002324581146" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Ronchi">
-            <color red="0.92500001192092896" green="0.72200000286102295" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Seashell">
-            <color red="1" green="0.95686274509803915" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.9570000171661377" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Spaghetti">
             <color red="0.17599999904632568" green="0.33300000429153442" blue="0.18799999356269836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Tomato">
-            <color red="0.94117647058823528" green="0.39215686274509803" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94099998474121094" green="0.3919999897480011" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nAJ-r5-vJK"/>
+        <segue reference="CJb-E0-yyg"/>
         <segue reference="5nf-nW-Wle"/>
     </inferredMetricsTieBreakers>
 </document>
