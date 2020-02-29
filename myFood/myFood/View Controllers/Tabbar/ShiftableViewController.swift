@@ -74,7 +74,7 @@ class ShiftableViewController: UIViewController, UITextFieldDelegate, UITextView
             keyboardSize = keyboardRect
         }
         
-        if let textField = textFieldBeingEdited  {
+        if let textField = textFieldBeingEdited { 
             if self.view.frame.origin.y == 0 {
                 
                 let yShift = yShiftWhenKeyboardAppearsFor(textInput: textField, keyboardSize: keyboardSize, nextY: keyboardSize.height)

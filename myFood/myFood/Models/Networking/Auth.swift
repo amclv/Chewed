@@ -33,7 +33,7 @@ class Auth {
     
     typealias CompletionHanlder = (Error?) -> Void
     
-    func signUp(with user: User, completion: @escaping (Error?) -> ()) {
+    func signUp(with user: User, completion: @escaping (Error?) -> Void) {
         
         //Building URL Request
         var request = URLRequest(url: signUpURL)
@@ -67,7 +67,7 @@ class Auth {
         }.resume()
     }
     
-    func signIn(with user: User, completion: @escaping (Error?) -> ()) {
+    func signIn(with user: User, completion: @escaping (Error?) -> Void) {
         
         // Building URL Request
         var request = URLRequest(url: signInURL)

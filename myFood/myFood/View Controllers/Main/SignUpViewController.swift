@@ -9,7 +9,7 @@
 import UIKit
 
 class SignUpViewController: ShiftableViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -38,22 +38,17 @@ class SignUpViewController: ShiftableViewController {
             !location.isEmpty {
             let user = User(username: username, password: password, email: email, location: location)
             
-            if password < String(6) {
-                print("error pass 6")
-            } else {
-                auth.signUp(with: user) { (error) in
-                    if let error = error {
-                        print("Error occured during signup: \(error)")
-                    } else {
-                        DispatchQueue.main.async {
-                            self.performSegue(withIdentifier: "signupShowTabbar", sender: self)
-                        }
+            auth.signUp(with: user) { (error) in
+                if let error = error {
+                    print("Error occured during signup: \(error)")
+                } else {
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "signupShowTabbar", sender: self)
                     }
                 }
             }
-        } else {
-            Alert.showBasic(title: "Oops!", message: "You didn't fill out a required field", vc: self)
         }
+        Alert.showBasic(title: "Oops!", message: "You didn't fill out a required field", vc: self)
     }
 }
 

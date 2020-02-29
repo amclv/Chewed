@@ -56,19 +56,7 @@ class RestaurantDetailViewController: ShiftableViewController {
             let hours = hoursTextView.text,
             !hours.isEmpty else { return }
         if let restaurant = restaurant {
-            restaurantController?.update(restaurant: restaurant,
-                                        id: 0,
-                                        name: restaurantName,
-                                        cuisineID: 0,
-                                        location: location,
-                                        hoursOfOperation: hours,
-                                        imgURL: "",
-                                        createdBy: "",
-                                        createdAt: "",
-                                        updatedAt: "")
-            
-        } else {
-            restaurantController?.createRestaurents(id: 0,
+            let newRest = RestaurantRepresentation(id: 0,
                                                    name: restaurantName,
                                                    cuisineID: 0,
                                                    location: location,
@@ -77,6 +65,20 @@ class RestaurantDetailViewController: ShiftableViewController {
                                                    createdBy: "",
                                                    createdAt: "",
                                                    updatedAt: "")
+            restaurantController?.updateX(oldRest: restaurant,
+                                          newRest: newRest)
+            
+        } else {
+            let newRest = RestaurantRepresentation(id: 0,
+                                                   name: restaurantName,
+                                                   cuisineID: 0,
+                                                   location: location,
+                                                   hoursOfOperation: hours,
+                                                   imgURL: "",
+                                                   createdBy: "",
+                                                   createdAt: "",
+                                                   updatedAt: "")
+            restaurantController?.createRestaurant(createRep: newRest)
             print("this is adding a restaurant")
         }
     }

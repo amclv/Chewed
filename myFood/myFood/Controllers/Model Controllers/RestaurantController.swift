@@ -15,7 +15,7 @@ class RestaurantController {
     
     init() {
         fetchRestaurantsFromServer { (error) in
-            NSLog("Init \(error)")
+            NSLog("Init \(String(describing: error))")
         }
     }
     
@@ -51,7 +51,6 @@ class RestaurantController {
                 completion(error)
                 return
             }
-            print(String(data: data, encoding: String.Encoding.utf8))
             
             do {
                 let decoder = JSONDecoder()
@@ -67,7 +66,7 @@ class RestaurantController {
     }
     
     func updateRestaurant(with representations: [RestaurantRepresentation]) {
-        let identifiersToFetch = representations.compactMap( { $0.id } )
+        let identifiersToFetch = representations.compactMap({$0.id})
         let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
         var restaurantsToCreate = representationsByID
         
@@ -106,26 +105,17 @@ class RestaurantController {
         }
     }
     
-    func update(restaurant: Restaurant,
-                id: Int?,
-                name: String,
-                cuisineID: Int,
-                location: String,
-                hoursOfOperation: String,
-                imgURL: String,
-                createdBy: String?,
-                createdAt: String?,
-                updatedAt: String) {
-        
-        restaurant.id = Int16(id ?? 0)
-        restaurant.name = name
-        restaurant.cuisineID = Int16(cuisineID)
-        restaurant.location = location
-        restaurant.hoursOfOperation = hoursOfOperation
-        restaurant.imgURL = imgURL
-        restaurant.createdBy = createdBy
-        restaurant.createdAt = createdAt
-        restaurant.updatedAt = updatedAt
+    func updateX(oldRest: Restaurant,
+                 newRest: RestaurantRepresentation) {
+        oldRest.id = Int16(newRest.id ?? 0)
+        oldRest.name = newRest.name
+        oldRest.cuisineID = Int16(newRest.cuisineID)
+        oldRest.location = newRest.location
+        oldRest.hoursOfOperation = newRest.hoursOfOperation
+        oldRest.imgURL = newRest.imgURL
+        oldRest.createdBy = newRest.createdBy
+        oldRest.createdAt = newRest.createdAt
+        oldRest.updatedAt = newRest.updatedAt
         CoreDataStack.shared.save()
     }
     
@@ -137,27 +127,10 @@ class RestaurantController {
         }
     }
     
-    func createRestaurents(id: Int?,
-                           name: String,
-                           cuisineID: Int,
-                           location: String,
-                           hoursOfOperation: String,
-                           imgURL: String,
-                           createdBy: String?,
-                           createdAt: String?,
-                           updatedAt: String) {
-        let restaurant = Restaurant(id: id,
-                                    name: name,
-                                    cuisineID: cuisineID,
-                                    location: location,
-                                    hoursOfOperation: hoursOfOperation,
-                                    imgURL: imgURL,
-                                    createdBy: createdBy ?? "",
-                                    createdAt: createdAt,
-                                    updatedAt: updatedAt,
-                                    context: CoreDataStack.shared.mainContext)
-        post(restaurant: restaurant)
-        saveToPersistenceStore()
+    func createRestaurant(createRep: RestaurantRepresentation) {
+        guard let restaurant = Restaurant(restaurantRepresentation: createRep) else { return }
+               post(restaurant: restaurant)
+               saveToPersistenceStore()
     }
     
     func post(restaurant: Restaurant, completion: @escaping () -> Void = {}) {

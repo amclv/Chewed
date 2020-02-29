@@ -59,31 +59,35 @@ class AddExperienceViewController: ShiftableViewController {
             let dishDate = date.text,
             !dishDate.isEmpty else { return }
         print("INBETWEEN!")
+        
         if let review = review {
-            reviewController.update(review: review,
-                                    id: 0,
-                                    menuItem: dishName,
-                                    itemPrice: Double(dishPrice) ?? 0,
-                                    itemRating: Int(dishRating) ?? 0,
-                                    itemReview: dishReview,
-                                    restaurantID: Int(review.restaurantID),
-                                    reviewedBy: review.reviewedBy ?? "",
-                                    itemImageURL: review.itemImageURL ?? "",
-                                    createdAt: review.createdAt,
-                                    updatedAt: review.updatedAt,
-                                    dateVisited: dishDate)
+            let newReview = ReviewRepresentation(id: 0,
+                                                 menuItem: dishName,
+                                                 itemPrice: Double(dishPrice) ?? 0,
+                                                 itemRating: Int(dishRating) ?? 0,
+                                                 itemReview: dishReview,
+                                                 restaurantID: Int(review.restaurantID),
+                                                 reviewedBy: review.reviewedBy ?? "",
+                                                 itemImageURL: review.itemImageURL ?? "",
+                                                 createdAt: review.createdAt,
+                                                 updatedAt: review.updatedAt,
+                                                 dateVisited: dishDate)
+            
+            reviewController.update(oldReview: review,
+                                    newReview: newReview)
         } else {
-            reviewController.createReviews(id: 0,
-                                           menuItem: dishName,
-                                           itemPrice: Double(dishPrice) ?? 0,
-                                           itemRating: Int(dishRating) ?? 0,
-                                           itemReview: dishReview,
-                                           restaurantID: Int(review?.restaurantID ?? 0),
-                                           reviewedBy: review?.reviewedBy ?? "",
-                                           itemImageURL: review?.itemImageURL ?? "",
-                                           createdAt: review?.createdAt,
-                                           updatedAt: review?.updatedAt,
-                                           dateVisited: dishDate)
+            let newReview = ReviewRepresentation(id: 0,
+                                                 menuItem: dishName,
+                                                 itemPrice: Double(dishPrice) ?? 0,
+                                                 itemRating: Int(dishRating) ?? 0,
+                                                 itemReview: dishReview,
+                                                 restaurantID: Int(review?.restaurantID ?? 0),
+                                                 reviewedBy: review?.reviewedBy ?? "",
+                                                 itemImageURL: review?.itemImageURL ?? "",
+                                                 createdAt: review?.createdAt,
+                                                 updatedAt: review?.updatedAt,
+                                                 dateVisited: dishDate)
+            reviewController.createReview(reviewRep: newReview)
             print("ADDING REVIEW TO TABLEVIEW")
         }
     }

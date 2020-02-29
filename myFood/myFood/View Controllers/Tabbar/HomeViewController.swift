@@ -50,7 +50,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, UISearchBarDelega
     var navigatoToLocation: CLLocation = CLLocation(latitude: 0,
                                                     longitude: 0)
     // Location manager
-    var locationManager:CLLocationManager!
+    var locationManager: CLLocationManager!
 
     // Search radius
     let searchRadius: CLLocationDistance = 10
@@ -104,7 +104,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, UISearchBarDelega
                                             span: span)
         // Run search
         let search = MKLocalSearch(request: request)
-        search.start(completionHandler: {(response, error) in
+        search.start(completionHandler: {(response, _) in
 
             if response == nil {
                 self.messageErrorNoResults()
@@ -194,11 +194,11 @@ class HomeViewController: UIViewController, MKMapViewDelegate, UISearchBarDelega
     }
 
     // Location manager to set userLocation, center, and region
-    func locationManager(_ manager:  CLLocationManager,
+    func locationManager(_ manager: CLLocationManager,
                          didUpdateLocations locations: [CLLocation]) {
 
         // Set userLocation
-        let userLocation:CLLocation = locations[0] as CLLocation
+        let userLocation: CLLocation = locations[0] as CLLocation
 
         // Set center
         let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude,
@@ -221,8 +221,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, UISearchBarDelega
 
     // Location manager failed
     func locationManager(_ manager: CLLocationManager,
-                         didFailWithError error: Error)
-    {
+                         didFailWithError error: Error) {
         print("Error \(error)")
     }
 
@@ -231,8 +230,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, UISearchBarDelega
                  didSelect view: MKAnnotationView) {
 
         if let restaurantTitle = view.annotation?.title,
-            let restaurantAddress = view.annotation?.coordinate
-        {
+            let restaurantAddress = view.annotation?.coordinate {
 
             navigatoToLocation = CLLocation(latitude: restaurantAddress.latitude,
                                             longitude: restaurantAddress.longitude)
@@ -257,7 +255,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, UISearchBarDelega
 
         // Create OK button
         let OKAction = UIAlertAction(title: "OK",
-                                     style: .default) { (action:UIAlertAction!) in
+                                     style: .default) {(_: UIAlertAction!) in
 
                                         // Code in this block will trigger when OK button tapped.
                                         print("No Results")
@@ -265,8 +263,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, UISearchBarDelega
         alertController.addAction(OKAction)
         self.present(alertController,
                      animated: true,
-                     completion:nil)
-
+                     completion: nil)
     }
 
     // Function to alert user how many results were returned from search
@@ -278,14 +275,14 @@ class HomeViewController: UIViewController, MKMapViewDelegate, UISearchBarDelega
 
         // Create OK button
         let OKAction = UIAlertAction(title: "OK",
-                                     style: .default) { (action:UIAlertAction!) in
+                                     style: .default) {(_: UIAlertAction!) in
                                         // Code in this block will trigger when OK button tapped.
                                         print("No Results")
         }
         alertController.addAction(OKAction)
         self.present(alertController,
                      animated: true,
-                     completion:nil)
+                     completion: nil)
     }
 
     // Navigate button tapped

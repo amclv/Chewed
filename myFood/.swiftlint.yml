@@ -1,0 +1,16 @@
+disabled_rules: # rule identifiers to exclude from running
+  - class_delegate_protocol # This breaks if you have a delegate protocol that inherits from a class-bound protocol (see: SwiftyTables DataSourceDelegate)
+  - identifier_name
+  - redundant_objc_attribute
+  - todo
+  - trailing_comma
+  - vertical_parameter_alignment # does not work with tab indentation: https://github.com/realm/SwiftLint/issues/1573
+  - trailing_whitespace
+  - line_length
+  - force_try
+  - force_cast
+excluded: # paths to ignore during linting.
+  - Carthage
+  - Swift Style Guide.playground
+  - fastlane/*
+  - Pods

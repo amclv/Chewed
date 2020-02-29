@@ -69,7 +69,7 @@ class ReviewController {
         // { HTTP Method: [PUT] URL: /api/reviews/:id }
         // to update cell with API
         
-        let identifiersToFetch = representations.compactMap( { $0.id } )
+        let identifiersToFetch = representations.compactMap({$0.id})
         let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
         var reviewsToCreate = representationsByID
         
@@ -109,30 +109,20 @@ class ReviewController {
         }
     }
     
-    func update(review: Review,
-                           id: Int?,
-                           menuItem: String,
-                           itemPrice: Double,
-                           itemRating: Int,
-                           itemReview: String,
-                           restaurantID: Int,
-                           reviewedBy: String?,
-                           itemImageURL: String,
-                           createdAt: String?,
-                           updatedAt: String?,
-                           dateVisited: String) {
-            review.id = Int16(id ?? 0)
-            review.menuItem = menuItem
-            review.itemPrice = itemPrice
-            review.itemRating = Int16(itemRating)
-            review.itemReview = itemReview
-            review.restaurantID = Int16(restaurantID)
-            review.reviewedBy = reviewedBy
-            review.itemImageURL = itemImageURL
-            review.createdAt = createdAt
-            review.updatedAt = updatedAt
-            review.dateVisited = dateVisited
-            CoreDataStack.shared.save()
+    func update(oldReview: Review,
+                   newReview: ReviewRepresentation) {
+        oldReview.id = Int16(newReview.id ?? 0)
+        oldReview.menuItem = newReview.menuItem
+        oldReview.itemPrice = newReview.itemPrice
+        oldReview.itemRating = Int16(newReview.itemRating)
+        oldReview.itemReview = newReview.itemReview
+        oldReview.restaurantID = Int16(newReview.restaurantID)
+        oldReview.reviewedBy = newReview.reviewedBy
+        oldReview.itemImageURL = newReview.itemImageURL
+        oldReview.createdAt = newReview.createdAt
+        oldReview.updatedAt = newReview.updatedAt
+        oldReview.dateVisited = newReview.dateVisited
+        CoreDataStack.shared.save()
     }
     
     func saveToPersistenceStore() {
@@ -142,30 +132,9 @@ class ReviewController {
             NSLog("Error saving object context: \(error)")
         }
     }
-
-    func createReviews(id: Int?,
-                       menuItem: String,
-                       itemPrice: Double,
-                       itemRating: Int,
-                       itemReview: String,
-                       restaurantID: Int,
-                       reviewedBy: String?,
-                       itemImageURL: String,
-                       createdAt: String?,
-                       updatedAt: String?,
-                       dateVisited: String) {
-        let review = Review(id: id,
-                            menuItem: menuItem,
-                            itemPrice: itemPrice,
-                            itemRating: itemRating,
-                            itemReview: itemReview,
-                            restaurant_id: restaurantID,
-                            reviewedBy: reviewedBy,
-                            itemImageURL: itemImageURL,
-                            createdAt: createdAt,
-                            updatedAt: updatedAt,
-                            dateVisited: dateVisited,
-                            context: CoreDataStack.shared.mainContext)
+    
+    func createReview(reviewRep: ReviewRepresentation) {
+        guard let review = Review(reviewRepresentation: reviewRep) else { return }
         post(review: review)
         saveToPersistenceStore()
     }
