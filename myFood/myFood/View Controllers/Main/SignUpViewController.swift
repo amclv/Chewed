@@ -13,7 +13,6 @@ class SignUpViewController: ShiftableViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     
     let auth = Auth()
@@ -23,7 +22,6 @@ class SignUpViewController: ShiftableViewController {
         emailTextField.delegate = self
         usernameTextField.delegate = self
         passwordTextField.delegate = self
-        confirmPasswordTextField.delegate = self
         locationTextField.delegate = self
     }
     
@@ -39,13 +37,17 @@ class SignUpViewController: ShiftableViewController {
             let location = locationTextField.text,
             !location.isEmpty {
             let user = User(username: username, password: password, email: email, location: location)
-
-            auth.signUp(with: user) { (error) in
-                if let error = error {
-                    print("Error occured during signup: \(error)")
-                } else {
-                    DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: "signupShowTabbar", sender: self)
+            
+            if password < String(6) {
+                print("error pass 6")
+            } else {
+                auth.signUp(with: user) { (error) in
+                    if let error = error {
+                        print("Error occured during signup: \(error)")
+                    } else {
+                        DispatchQueue.main.async {
+                            self.performSegue(withIdentifier: "signupShowTabbar", sender: self)
+                        }
                     }
                 }
             }

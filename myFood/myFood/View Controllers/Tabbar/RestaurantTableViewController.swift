@@ -79,20 +79,20 @@ extension RestaurantTableViewController: NSFetchedResultsControllerDelegate {
         
         switch type {
         case .insert:
-            guard let newIndexPath = newIndexPath else{return}
+            guard let newIndexPath = newIndexPath else { return }
             tableView.insertRows(at: [newIndexPath], with: .automatic)
             
         case .delete:
-            guard let indexPath = indexPath else{return}
+            guard let indexPath = indexPath else { return }
             tableView.deleteRows(at: [indexPath], with: .automatic)
             
         case .move:
             guard let indexPath = indexPath,
-                let newIndexPath = newIndexPath else{return}
+                let newIndexPath = newIndexPath else { return }
             tableView.moveRow(at: indexPath, to: newIndexPath)
             
         case .update:
-            guard let indexPath = indexPath else{return}
+            guard let indexPath = indexPath else { return }
             tableView.reloadRows(at: [indexPath], with: .automatic)
             
         @unknown default:
@@ -100,7 +100,10 @@ extension RestaurantTableViewController: NSFetchedResultsControllerDelegate {
         }
     }
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange sectionInfo: NSFetchedResultsSectionInfo,
+                    atSectionIndex sectionIndex: Int,
+                    for type: NSFetchedResultsChangeType) {
         
         let sectionSet = IndexSet(integer: sectionIndex)
         

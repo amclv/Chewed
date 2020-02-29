@@ -16,7 +16,7 @@
         <!--Home-->
         <scene sceneID="1Ur-GU-PxZ">
             <objects>
-                <viewController id="fsG-4r-Pbk" customClass="HomeViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fsG-4r-Pbk" customClass="HomeViewController" customModule="myFood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vnA-HV-Eyx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,7 +125,7 @@
         <!--Add Dish Review-->
         <scene sceneID="3vY-hf-SSx">
             <objects>
-                <viewController id="Qot-2f-lMB" customClass="AddExperienceViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Qot-2f-lMB" customClass="AddExperienceViewController" customModule="myFood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2YI-NH-zof">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -206,13 +206,13 @@
         <!--Reviews-->
         <scene sceneID="urP-bP-yMD">
             <objects>
-                <tableViewController id="mRM-pc-Whk" customClass="ReviewsTableViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="mRM-pc-Whk" customClass="ReviewsTableViewController" customModule="myFood" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JUA-Jx-qZL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Cararra"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="theCell" id="G5c-98-TRf" customClass="ReviewsTableViewCell" customModule="FoodieFun" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="theCell" id="G5c-98-TRf" customClass="ReviewsTableViewCell" customModule="myFood" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G5c-98-TRf" id="lfV-xC-HpA">
@@ -228,7 +228,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="theCell" id="FxY-tf-lC4" customClass="ReviewsTableViewCell" customModule="FoodieFun" customModuleProvider="target">
+                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="theCell" id="FxY-tf-lC4" customClass="ReviewsTableViewCell" customModule="myFood" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="28" width="343" height="0.0"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FxY-tf-lC4" id="5bL-u0-mAI">
@@ -323,7 +323,7 @@
         <!--Restaurant Review-->
         <scene sceneID="fVg-A1-udg">
             <objects>
-                <viewController id="aLR-Os-dZY" userLabel="Restaurant Review" customClass="RestaurantDetailViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aLR-Os-dZY" userLabel="Restaurant Review" customClass="RestaurantDetailViewController" customModule="myFood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="obN-xR-yvs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -411,13 +411,13 @@
         <!--Restaurant Table View Controller-->
         <scene sceneID="0QM-Pg-317">
             <objects>
-                <tableViewController id="gsH-dS-cxe" customClass="RestaurantTableViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="gsH-dS-cxe" customClass="RestaurantTableViewController" customModule="myFood" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1J3-Ps-npe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="restaurantCell" id="BYc-2y-PDW" customClass="RestaurantsTableViewCell" customModule="FoodieFun" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="restaurantCell" id="BYc-2y-PDW" customClass="RestaurantsTableViewCell" customModule="myFood" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BYc-2y-PDW" id="scv-o4-b6g">
