@@ -7,4 +7,8 @@ target 'myFood' do
 
   # Pods for myFood
 pod 'SwiftLint'
+
+  # Pods for Firebase
+pod 'Firebase/Analytics'
+pod 'Firebase/Auth'
 end
