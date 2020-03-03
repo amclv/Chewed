@@ -6,12 +6,12 @@ target 'myFood' do
   use_frameworks!
 
   # Pods for myFood
-pod 'SwiftLint'
+  pod 'SwiftLint'
 
-  # Pods for Amplify Framework
-pod 'amplify-tools'
-pod 'Amplify'
-pod 'AWSPluginsCore'
-pod 'AmplifyPlugins/AWSAPIPlugin'
 
+  # Pods for Firebase
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Analytics'
 end
