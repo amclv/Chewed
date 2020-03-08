@@ -8,6 +8,9 @@
 
 import Foundation
 import CoreData
+import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
 
 enum HTTPMethod: String {
     case get = "GET"
@@ -24,7 +27,7 @@ enum NetworkError: Error {
     case noDecode
 }
 
-var bearer: Bearer? // short on time. i know it's not good practice
+var bearer: Bearer?
 
 class Auth {
     

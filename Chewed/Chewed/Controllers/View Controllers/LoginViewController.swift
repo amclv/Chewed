@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class LoginViewController: ShiftableViewController {
 
@@ -16,11 +17,15 @@ class LoginViewController: ShiftableViewController {
     let auth = Auth()
     
     var window: UIWindow?
+    var interstitial: GADInterstitial!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        usernameTextField.delegate = self
-        passwordTextField.delegate = self
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        let request = GADRequest()
+        interstitial.load(request)
+//        usernameTextField.delegate = self
+//        passwordTextField.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,7 +39,7 @@ class LoginViewController: ShiftableViewController {
             !username.isEmpty,
             let password = passwordTextField.text,
             !password.isEmpty {
-            let user = User(username: username, password: password, email: "", location: "")
+            let user = User(username: username, password: password, email: "")
             
             auth.signIn(with: user) { (error) in
                 if let error = error {
@@ -48,6 +53,9 @@ class LoginViewController: ShiftableViewController {
                     }
                 }
             }
+        }
+        if self.interstitial.isReady {
+            self.interstitial.present(fromRootViewController: self)
         }
     }
 }
