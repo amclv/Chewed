@@ -43,7 +43,7 @@
 
 /* Begin PBXFileReference section */
 		1A029D4B23F1230D002D6FB6 /* ShiftableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiftableViewController.swift; sourceTree = "<group>"; };
-		1A2C122823E7835B0092501E /* myFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A2C122823E7835B0092501E /* Chewed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chewed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2C123223E7835B0092501E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A2C123723E7835C0092501E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A4C451223F076B000F4E00D /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		1A2C121F23E7835B0092501E = {
 			isa = PBXGroup;
 			children = (
-				1A2C122A23E7835B0092501E /* myFood */,
+				1A2C122A23E7835B0092501E /* Chewed */,
 				1A2C122923E7835B0092501E /* Products */,
 				7002BD137654024ECEBC5761 /* Pods */,
 				7F3AC37E7310368513FFCE92 /* Frameworks */,
@@ -116,12 +116,12 @@
 		1A2C122923E7835B0092501E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1A2C122823E7835B0092501E /* myFood.app */,
+				1A2C122823E7835B0092501E /* Chewed.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1A2C122A23E7835B0092501E /* myFood */ = {
+		1A2C122A23E7835B0092501E /* Chewed */ = {
 			isa = PBXGroup;
 			children = (
 				1A07EE79240D9127005C218C /* Resources */,
@@ -129,7 +129,7 @@
 				1AF5718A23E936CC00F9EC8F /* Controllers */,
 				1AF5718723E936B600F9EC8F /* Models */,
 			);
-			path = myFood;
+			path = Chewed;
 			sourceTree = "<group>";
 		};
 		1A2C124023E7836E0092501E /* Views */ = {
@@ -257,9 +257,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1A2C122723E7835B0092501E /* myFood */ = {
+		1A2C122723E7835B0092501E /* Chewed */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1A2C123C23E7835C0092501E /* Build configuration list for PBXNativeTarget "myFood" */;
+			buildConfigurationList = 1A2C123C23E7835C0092501E /* Build configuration list for PBXNativeTarget "Chewed" */;
 			buildPhases = (
 				3B715E618962F2BE5FEF87AF /* [CP] Check Pods Manifest.lock */,
 				1A2C122423E7835B0092501E /* Sources */,
@@ -272,9 +272,9 @@
 			);
 			dependencies = (
 			);
-			name = myFood;
+			name = Chewed;
 			productName = FoodieFun;
-			productReference = 1A2C122823E7835B0092501E /* myFood.app */;
+			productReference = 1A2C122823E7835B0092501E /* Chewed.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -292,7 +292,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1A2C122323E7835B0092501E /* Build configuration list for PBXProject "myFood" */;
+			buildConfigurationList = 1A2C122323E7835B0092501E /* Build configuration list for PBXProject "Chewed" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -305,7 +305,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1A2C122723E7835B0092501E /* myFood */,
+				1A2C122723E7835B0092501E /* Chewed */,
 			);
 		};
 /* End PBXProject section */
@@ -570,7 +570,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.AaronCleveland.myFood;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AaronCleveland.Chewed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Foodie Fun Aaron Cleveland AP Provisioning Profile";
 				SWIFT_VERSION = 5.0;
@@ -592,7 +592,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.AaronCleveland.myFood;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AaronCleveland.Chewed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Foodie Fun Aaron Cleveland AP Provisioning Profile";
 				SWIFT_VERSION = 5.0;
@@ -603,7 +603,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1A2C122323E7835B0092501E /* Build configuration list for PBXProject "myFood" */ = {
+		1A2C122323E7835B0092501E /* Build configuration list for PBXProject "Chewed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1A2C123A23E7835C0092501E /* Debug */,
@@ -612,7 +612,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1A2C123C23E7835C0092501E /* Build configuration list for PBXNativeTarget "myFood" */ = {
+		1A2C123C23E7835C0092501E /* Build configuration list for PBXNativeTarget "Chewed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1A2C123D23E7835C0092501E /* Debug */,

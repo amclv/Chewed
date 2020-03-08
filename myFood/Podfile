@@ -7,11 +7,12 @@ target 'myFood' do
 
   # Pods for myFood
   pod 'SwiftLint'
-
+  pod 'Google-Mobile-Ads-SDK'
 
   # Pods for Firebase
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
   pod 'Firebase/Auth'
   pod 'Firebase/Analytics'
 end
