@@ -68,5 +68,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>GADInvalidInitializationException</key>
+	<string>ca-app-pub-8909349188310022~2012037511</string>
 </dict>
 </plist>

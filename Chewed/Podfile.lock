@@ -1,4 +1,8 @@
 PODS:
+  - ASUI (0.0.6)
+  - Firebase/AdMob (6.18.0):
+    - Firebase/CoreOnly
+    - Google-Mobile-Ads-SDK (~> 7.50)
   - Firebase/Analytics (6.18.0):
     - Firebase/Core
   - Firebase/Auth (6.18.0):
@@ -96,6 +100,8 @@ PODS:
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
+  - ASUI
+  - Firebase/AdMob
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
@@ -106,6 +112,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - ASUI
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -128,6 +135,7 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
+  ASUI: 75798ed782da5431da59f7500bdbe973b972c90d
   Firebase: 0490eca762a72e4f1582319539153897f1508dee
   FirebaseAnalytics: 058d71e714a1a6804d9e0f25e3bb18e377a51579
   FirebaseAuth: 5ce2b03a3d7fe56b7a6e4c5ec7ff1522890b1d6f
@@ -149,6 +157,6 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: 905ed64176fa6ea259f4f262c9b005de8c7d654b
+PODFILE CHECKSUM: a6bb1742f18b8d2c800dc18025f3b225b3210625
 
 COCOAPODS: 1.9.0

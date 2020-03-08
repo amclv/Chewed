@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class SignUpViewController: ShiftableViewController {
     
@@ -17,8 +18,13 @@ class SignUpViewController: ShiftableViewController {
     
     let auth = Auth()
     
+    var interstitial: GADInterstitial!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-8909349188310022/7152683552")
+        let request = GADRequest()
+        interstitial.load(request)
         emailTextField.delegate = self
         usernameTextField.delegate = self
         passwordTextField.delegate = self
@@ -41,6 +47,9 @@ class SignUpViewController: ShiftableViewController {
             auth.signUp(with: user) { (error) in
                 if let error = error {
                     print("Error occured during signup: \(error)")
+                    if self.interstitial.isReady {
+                        self.interstitial.present(fromRootViewController: self)
+                    }
                 } else {
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "signupShowTabbar", sender: self)
