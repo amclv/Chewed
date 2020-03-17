@@ -8,6 +8,7 @@ target 'Chewed' do
   # Pods for Chewed
   pod 'SwiftLint'
   pod 'Google-Mobile-Ads-SDK'
+  pod 'Firebase/UI'
 
   # Pods for Firebase
   pod 'Firebase/Core'
